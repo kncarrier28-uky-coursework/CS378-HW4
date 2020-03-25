@@ -42,7 +42,7 @@ sequence = blumBlumShub(p, q, seed, length)
 print("Generated pseudorandom sequence of length", length)
 
 sum = 0
-for i in range(length - 1000):
+for i in range(length - 999):
     subsequence = sequence[i:i+1000]
     count = 0
     for j in range(len(subsequence) - 1):
