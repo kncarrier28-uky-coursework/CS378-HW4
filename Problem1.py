@@ -131,12 +131,17 @@ def decryptVigenere(cipher, key):
 
 cipher = open("./vig2.txt").read().replace('\n', '')
 repeats = findRepeatedSubstrings(cipher, 3)
+print(repeats)
 spacing = findSpacing(cipher, repeats)
+print(spacing)
 factors = factorDistances(createSet(spacing))
+print(factors)
 
 numberOccurence = {}
 for factor in set(factors):
     numberOccurence[factor] = factors.count(factor)
+
+print(numberOccurence)
 
 # This can be used to test multiple key lengths. I removed it to save computational time since 4 was the most likely key length
 # for factor in sorted(numberOccurence, key=numberOccurence.get, reverse=True):
@@ -146,5 +151,7 @@ likelyKey = []
 for string in sepCipher:
     p = calcFreqLetters(string)
     likelyKey.append(findMaximumK(string, q, p))
+
+print(likelyKey)
 
 print(decryptVigenere(cipher, likelyKey))
