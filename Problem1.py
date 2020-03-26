@@ -61,7 +61,7 @@ def createSet(dict):
 def factorDistances(distances):
     factors = []
     for value in distances:
-        for i in range(3, 7):
+        for i in range(2, 7):
             if value % i == 0:
                 factors.append(i)
     return factors
@@ -138,7 +138,9 @@ numberOccurence = {}
 for factor in set(factors):
     numberOccurence[factor] = factors.count(factor)
 
+# This can be used to test multiple key lengths. I removed it to save computational time since 4 was the most likely key length
 # for factor in sorted(numberOccurence, key=numberOccurence.get, reverse=True):
+
 sepCipher = separateCipher(cipher, 4)
 likelyKey = []
 for string in sepCipher:
